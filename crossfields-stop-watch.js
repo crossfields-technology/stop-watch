@@ -58,6 +58,30 @@ Polymer({
       type: Boolean,
       value: true,
       notify: true
+    },
+
+    showStart: {
+      type: Boolean,
+      value: false,
+      notify: true
+    },
+
+    showStop: {
+      type: Boolean,
+      value: false,
+      notify: true
+    },
+
+    showReset: {
+      type: Boolean,
+      value: false,
+      notify: true
+    },
+
+    showPause: {
+      type: Boolean,
+      value: false,
+      notify: true
     }
   },
 

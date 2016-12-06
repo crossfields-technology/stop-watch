@@ -20,20 +20,28 @@ Polymer 1.0 stopwatch element for display duration of time
     <div id="clock">
       <div id="face">
         <span id="minutes0">{{time}}</span>
-          <template is="dom-if" if="{{!isPaused}}">
-            <paper-button class="timer-pause" on-tap="pause">
-              <iron-icon icon="av:pause"></iron-icon>
-            </paper-button>
-          </template>
-          <template is="dom-if" if="{{isPaused}}">
-            <paper-button class="timer-start" on-tap="resume">
-              <iron-icon icon="av:play-arrow"></iron-icon>
-            </paper-button>
+          <template is="dom-if" if="{{showPause}}">
+            <template is="dom-if" if="{{!isPaused}}">
+              <paper-button class="timer-pause" on-tap="pause">
+                <iron-icon icon="av:pause"></iron-icon>
+              </paper-button>
+            </template>
+            <template is="dom-if" if="{{isPaused}}">
+              <paper-button class="timer-start" on-tap="resume">
+                <iron-icon icon="av:play-arrow"></iron-icon>
+              </paper-button>
+            </template>
           </template>
       </div>
-      <paper-button class="timer-start" raised disabled="{{active}}" on-click="start" >Start</paper-button>
-      <paper-button class="timer-stop" raised on-click="stop" >Stop</paper-button>
-      <paper-button class="timer-reset" raised on-click="reset">Reset</paper-button>
+      <template is="dom-if" if="{{showStart}}">
+        <paper-button class="timer-start" raised disabled="{{active}}" on-click="start" >Start</paper-button>
+      </template>
+      <template is="dom-if" if="{{showStop}}">
+        <paper-button class="timer-stop" raised on-click="stop" >Stop</paper-button>
+      </template>
+      <template is="dom-if" if="{{showReset}}">
+        <paper-button class="timer-reset" raised on-click="reset">Reset</paper-button>
+      </template>
     </div>
 
   </template>
