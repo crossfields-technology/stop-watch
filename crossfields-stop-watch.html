@@ -15,6 +15,13 @@ Polymer 1.0 stopwatch element for display duration of time
     <style>
       :host {
         display: block;
+      },
+
+      :host #clock {
+        font-size: 4em;
+        background: #fff;
+        width: 250px; height: 100px;
+        color: #707070;
       }
     </style>
     <div id="clock">
@@ -33,13 +40,9 @@ Polymer 1.0 stopwatch element for display duration of time
             </template>
           </template>
       </div>
-      <template is="dom-if" if="{{showStart}}">
-        <paper-button class="timer-start" raised disabled="{{active}}" on-click="start" >Start</paper-button>
-      </template>
-      <template is="dom-if" if="{{showStop}}">
+      <template is="dom-if" if="{{showActions}}">
+        <paper-button class="timer-start" raised disabled="{{active}}" on-click="start">Start</paper-button>
         <paper-button class="timer-stop" raised on-click="stop" >Stop</paper-button>
-      </template>
-      <template is="dom-if" if="{{showReset}}">
         <paper-button class="timer-reset" raised on-click="reset">Reset</paper-button>
       </template>
     </div>

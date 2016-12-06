@@ -66,19 +66,7 @@ Polymer({
       notify: true
     },
 
-    showStop: {
-      type: Boolean,
-      value: false,
-      notify: true
-    },
-
-    showReset: {
-      type: Boolean,
-      value: false,
-      notify: true
-    },
-
-    showPause: {
+    showActions: {
       type: Boolean,
       value: false,
       notify: true
