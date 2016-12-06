@@ -45,6 +45,8 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ## Properties
 
+### autoStart
+
 | Property  | Type      | Default  |
 |-----------|-----------|----------|
 | autoStart | Boolean   | false    |
@@ -54,6 +56,8 @@ autostart the stop watch on load.
 ```
 <crossfields-stop-watch auto-start="true"></crossfields-stop-watch>
 ```
+
+### hideMilliseconds
 
 | Property         | Type      | Default |
 |------------------|-----------|---------|
@@ -65,11 +69,14 @@ hide milliseconds on the stop watch.
 <crossfields-stop-watch hide-milliseconds="false"></crossfields-stop-watch>
 ```
 
+### mode
+
 | Property         | Type      | Default      |
 |------------------|-----------|--------------|
 | mode             | String    | stopwatch    |
 
 set the mode for the stopwatch.
+
 1. stopwatch
   1. increments the clock forwards.
 2. timer
@@ -80,6 +87,8 @@ set the mode for the stopwatch.
 <crossfields-stop-watch mode="stopwatch"></crossfields-stop-watch>
 ```
 
+### showActions
+
 | Property         | Type      | Default      |
 |------------------|-----------|--------------|
 | showActions      | Boolean   | false        |
@@ -89,6 +98,8 @@ display the start, stop and rest buttons.
 ```
 <crossfields-stop-watch show-actions="true"></crossfields-stop-watch>
 ```
+
+### showPause
 
 | Property         | Type      | Default      |
 |------------------|-----------|--------------|
