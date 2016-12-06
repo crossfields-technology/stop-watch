@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>crossfields-stop-watch test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../crossfields-stop-watch.html">
+  </head>
+  <body>
+    <test-fixture id="crossfields-stopwatch-fixture">
+      <template>
+        <crossfields-stop-watch></crossfields-stop-watch>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('crossfields-stop-watch', function() {
+        var crossfieldsStopwatch;
+
+        setup(function() {
+            crossfieldsStopwatch = fixture('crossfields-stopwatch-fixture');
+        })
+
+        test('instantiating the element works', function() {
+          assert.equal(crossfieldsStopwatch.is, 'crossfields-stop-watch');
+        });
+      });
+    </script>
+  </body>
+</html>
