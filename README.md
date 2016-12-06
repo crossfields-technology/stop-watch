@@ -1,6 +1,6 @@
 # \<crossfields-stop-watch\>
 
-Polymer 1.0 stopwatch element for display duration of time
+Polymer 1.0 stopwatch element to display duration.
 
 ## Install the Polymer-CLI
 
