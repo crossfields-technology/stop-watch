@@ -36,3 +36,66 @@ $ polymer test
 ```
 
 Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+
+## Element implementation
+
+```
+<crossfields-stop-watch></crossfields-stop-watch>
+```
+
+## Properties
+
+| Property  | Type      | Default  |
+|-----------|-----------|----------|
+| autoStart | Boolean   | false    |
+
+autostart the stop watch on load.
+
+```
+<crossfields-stop-watch auto-start="true"></crossfields-stop-watch>
+```
+
+| Property         | Type      | Default |
+|------------------|-----------|---------|
+| hideMilliseconds | Boolean   | true    |
+
+hide milliseconds on the stop watch.
+
+```
+<crossfields-stop-watch hide-milliseconds="false"></crossfields-stop-watch>
+```
+
+| Property         | Type      | Default      |
+|------------------|-----------|--------------|
+| mode             | String    | stopwatch    |
+
+set the mode for the stopwatch.
+1. stopwatch
+  1. increments the clock forwards.
+2. timer
+  1. increments the stopwatch backwards from an *offset* millisecond time.
+
+```
+<crossfields-stop-watch mode="timer" offset="5000"></crossfields-stop-watch>
+<crossfields-stop-watch mode="stopwatch"></crossfields-stop-watch>
+```
+
+| Property         | Type      | Default      |
+|------------------|-----------|--------------|
+| showActions      | Boolean   | false        |
+
+display the start, stop and rest buttons.
+
+```
+<crossfields-stop-watch show-actions="true"></crossfields-stop-watch>
+```
+
+| Property         | Type      | Default      |
+|------------------|-----------|--------------|
+| showPause        | Boolean   | false        |
+
+show the pause and resume button next to the stopwatch.
+
+```
+<crossfields-stop-watch show-pause="true"></crossfields-stop-watch>
+```

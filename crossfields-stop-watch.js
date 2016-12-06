@@ -60,7 +60,7 @@ Polymer({
       notify: true
     },
 
-    showStart: {
+    showPause: {
       type: Boolean,
       value: false,
       notify: true
