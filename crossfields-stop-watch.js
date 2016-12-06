@@ -129,9 +129,9 @@ Polymer({
       var displayTime;
 
       if (this.hideMilliseconds) {
-          displayTime = m + ":" + s;
+        displayTime = m + ":" + s;
       } else {
-          m + ":" + s + "." + ms;
+        displayTime = m + ":" + s + "." + ms;
       }
       return displayTime;
     } catch(e){

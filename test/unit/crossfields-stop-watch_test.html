@@ -29,6 +29,24 @@
         test('instantiating the element works', function() {
           assert.equal(crossfieldsStopwatch.is, 'crossfields-stop-watch');
         });
+
+        test('start method sets correct values', function() {
+          crossfieldsStopwatch.start();
+          expect(crossfieldsStopwatch.active).to.be.true;
+        });
+
+        test('autostart should enable the stopwatch', function() {
+          crossfieldsStopwatch.autostart = true;
+          crossfieldsStopwatch.ready();
+          expect(crossfieldsStopwatch.active).to.be.true;
+        });
+
+        test('milliseconds displays', function() {
+          crossfieldsStopwatch.hideMilliseconds = false;
+          crossfieldsStopwatch.setTime(0);
+          crossfieldsStopwatch.start();
+          expect(crossfieldsStopwatch.time).to.have.length(7);
+        });
       });
     </script>
   </body>
