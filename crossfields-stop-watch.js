@@ -52,6 +52,12 @@ Polymer({
     hideMilliseconds: {
       type: Boolean,
       value: true
+    },
+
+    isPaused: {
+      type: Boolean,
+      value: true,
+      notify: true
     }
   },
 
@@ -63,7 +69,15 @@ Polymer({
 
   start: function() {
     this.active = true;
-    this.startTime = Date.now();
+
+    if(!this.active) {
+      this.startTime = Date.now();
+    }
+    if(this.isPaused){
+      this.startTime = Math.floor(Date.now() - this.pauseTime);
+    }
+
+    this.isPaused = false;
     switch (this.mode){
       case 'stopwatch':
           this.fire('onWatchStart', {startTime: this.startTime});
@@ -80,6 +94,7 @@ Polymer({
 
   stop: function () {
     this.active = false;
+    this.isPaused = true;
     return false;
   },
 
@@ -112,9 +127,24 @@ Polymer({
     }
   },
 
+  pause: function() {
+    this.pauseTime = Math.floor((Date.now() - this.startTime));
+    this.active = false;
+    this.isPaused = true;
+  },
+
+  resume: function() {
+    if(!this.active && !this.pauseTime) {
+      this.start();
+      return;
+    }
+    this.start();
+  },
+
   reset: function() {
     this.fire('onReset');
     this.active = false;
+    this.isPaused = true;
     this.time = this.setTime(this.offset);
   },
 
