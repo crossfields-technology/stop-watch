@@ -34,6 +34,11 @@ Polymer({
       value: 0
     },
 
+    timer: {
+      type: Boolean,
+      value: false
+    },
+
     startTime: {
       type: Date,
       value: null
@@ -42,7 +47,18 @@ Polymer({
     pauseTime: {
       type: Date,
       value: null
+    },
+
+    hideMilliseconds: {
+      type: Boolean,
+      value: true
     }
+  },
+
+  listeners: {
+    'start-stopwatch': 'start',
+    'stop-stopwatch': 'stop',
+    'reset-stopwatch': 'reset'
   },
 
   start: function() {
@@ -80,7 +96,8 @@ Polymer({
 
   downtick: function () {
     var elapsed = Math.floor((Date.now() - this.startTime)),
-      remaining = this.offset - elapsed;
+        remaining = this.offset - elapsed;
+
     if(!this.active) {
       this.fire('onTimerStop', {duration:elapsed, remaining: remaining} )
       return false;
@@ -108,7 +125,15 @@ Polymer({
           ms = String(duration).slice(-3);
       m = (m < 10) ? "0" + m : m;
       s = (s < 10) ? "0" + s : s;
-      return m + ":" + s + "." + ms;
+
+      var displayTime;
+
+      if (this.hideMilliseconds) {
+          displayTime = m + ":" + s;
+      } else {
+          m + ":" + s + "." + ms;
+      }
+      return displayTime;
     } catch(e){
       alert(e);
     }

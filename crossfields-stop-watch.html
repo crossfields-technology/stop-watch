@@ -14,6 +14,21 @@ Polymer 1.0 stopwatch element for display duration of time
       :host {
         display: block;
       }
+
+      .host paper-button {
+        margin: 20px 10px 10px 10px;
+        padding: 5px 10px;
+        border-radius: 2px;
+        color: #ffffff;
+      }
+
+      #face {
+        @apply(--stop-watch-face)
+      }
+
+      paper-button {
+        @apply(--stop-watch-buttons)
+      }
     </style>
     <div id="clock">
       <div id="face"><span id="minutes0">{{time}}</span></div>
