@@ -71,6 +71,19 @@
             }, 2100);
           });
         });
+
+        test('timer mode count backwards', function(done) {
+          crossfieldsStopwatch.offset = 5000;
+          crossfieldsStopwatch.mode = "timer";
+          crossfieldsStopwatch.start();
+          flush(function() {
+            var time = crossfieldsStopwatch.querySelector('#face');
+            setTimeout(function() {
+              expect(time.innerText).to.equal("00:02");
+              done();
+            }, 2100);
+          });
+        });
       });
     </script>
   </body>
