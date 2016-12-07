@@ -87,6 +87,19 @@ set the mode for the stopwatch.
 <crossfields-stop-watch mode="stopwatch"></crossfields-stop-watch>
 ```
 
+### offset
+
+| Property         | Type      | Default      |
+|------------------|-----------|--------------|
+| offset           | Number    | 0            |
+
+offset the clock by now time (calculated by milliseconds (1000 = 1 second)).
+
+```
+<crossfields-stop-watch offset="5000"></crossfields-stop-watch>
+```
+
+
 ### showActions
 
 | Property         | Type      | Default      |
