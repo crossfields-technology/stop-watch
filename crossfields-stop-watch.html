@@ -13,20 +13,18 @@ Polymer 1.0 stopwatch element to display duration of time
 <dom-module id="crossfields-stop-watch">
   <template>
     <style>
-      :host {
+      :host>* {
         display: block;
+        justify-content: center;
+
+        --paper-button: {
+          width: 50px;
+          padding: 10px 0;
+        }
       }
 
-      paper-button {
-        padding: 10px 0;
-      };
-
-      :host #face {
-        justify-content: center;
-        background: #fff;
-        display: flex;
+      #minutes0 {
         font-size: 3em;
-        flex-flow: row wrap;
       }
     </style>
     <div id="clock">
