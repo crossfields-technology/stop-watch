@@ -5,7 +5,7 @@
 
 <!--
 `crossfields-stop-watch`
-Polymer 1.0 stopwatch element for display duration of time
+Polymer 1.0 stopwatch element to display duration of time
 
 @demo demo/index.html
 -->
@@ -15,13 +15,18 @@ Polymer 1.0 stopwatch element for display duration of time
     <style>
       :host {
         display: block;
-      },
+      }
 
-      :host #clock {
-        font-size: 4em;
+      paper-button {
+        padding: 10px 0;
+      };
+
+      :host #face {
+        justify-content: center;
         background: #fff;
-        width: 250px; height: 100px;
-        color: #707070;
+        display: flex;
+        font-size: 3em;
+        flex-flow: row wrap;
       }
     </style>
     <div id="clock">
@@ -34,7 +39,7 @@ Polymer 1.0 stopwatch element for display duration of time
               </paper-button>
             </template>
             <template is="dom-if" if="{{isPaused}}">
-              <paper-button class="timer-start" on-tap="resume">
+              <paper-button class="timer-pause" on-tap="resume">
                 <iron-icon icon="av:play-arrow"></iron-icon>
               </paper-button>
             </template>
